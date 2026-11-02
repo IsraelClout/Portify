@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8f6">
+  <meta name="description" content="Create a clear, professional portfolio to share your projects, skills, and experience.">
+  <title>Portify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#top" aria-label="Portify home">
+      <span class="logo-mark" aria-hidden="true">P</span>
+      Portify
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#account-section">Your account</a>
+      <a href="#builder" class="nav-btn">Start building <span aria-hidden="true">→</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow">A portfolio, made yours</span>
+        <h1 id="hero-title">Your work deserves a <span>good introduction.</span></h1>
+        <p>Turn projects, skills, and experience into a portfolio you’re proud to share. No code or design experience needed.</p>
+        <div class="hero-actions">
+          <a href="#builder" class="primary-btn">Build your portfolio <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="hero-note">Free to build <span>·</span> Edit as you go <span>·</span> Download when you’re ready</p>
+      </div>
+
+      <div class="hero-sample" aria-label="Example student portfolio preview">
+        <div class="sample-browser">
+          <div class="sample-browser-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <p>portfolio.example</p>
+          </div>
+          <div class="sample-content">
+            <div class="sample-topline">
+              <strong>PORTFOLIO</strong>
+              <span>Selected work · 2026</span>
+            </div>
+            <div class="sample-profile">
+              <div class="sample-avatar" aria-hidden="true">A</div>
+              <div>
+                <p>COMPUTER SCIENCE STUDENT</p>
+                <h2>Ama Asare</h2>
+              </div>
+            </div>
+            <p class="sample-role">Building thoughtful tools for everyday problems.</p>
+            <div class="sample-divider"></div>
+            <p class="sample-project-label">A FEW THINGS I’VE MADE</p>
+            <div class="sample-project">
+              <strong>Campus map</strong>
+              <span>Web app · 2026</span>
+            </div>
+            <div class="sample-project">
+              <strong>Study planner</strong>
+              <span>Product design · 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="builder" id="builder" aria-labelledby="builder-title">
+      <div class="section-heading">
+        <p class="eyebrow">Your portfolio starts here</p>
+        <h2 id="builder-title">Add the details. See the difference.</h2>
+        <p>Your preview updates as you write. Keep it simple; you can always refine it later.</p>
+      </div>
+
+      <div class="workspace">
+        <form id="portfolioForm" class="editor">
+          <h3>Your information</h3>
+          <p class="editor-intro">Start with the essentials. You can leave optional fields blank.</p>
+
+          <label for="name">Name</label>
+          <input id="name" maxlength="120" placeholder="e.g. Kwame Mensah" autocomplete="name" required>
+
+          <label for="role">Programme or role</label>
+          <input id="role" maxlength="160" placeholder="e.g. Computer Science Student" required>
+
+          <label for="bio">A short introduction</label>
+          <textarea id="bio" maxlength="3000" placeholder="What are you interested in? What do you hope to work on?" required></textarea>
+          <p class="field-help">A few clear sentences work better than a long biography.</p>
+
+          <label for="skills">Skills</label>
+          <input id="skills" maxlength="1000" placeholder="e.g. Research, Python, Figma">
+          <p class="field-help">Separate each skill with a comma.</p>
+
+          <label for="project">Projects</label>
+          <textarea id="project" maxlength="4000" placeholder="Campus map — A guide to accessible routes&#10;Study planner — A tool for organizing coursework"></textarea>
+          <p class="field-help">One project per line. Add an em dash (—) before an optional description.</p>
+
+          <label for="email">Contact email (optional)</label>
+          <input id="email" type="email" maxlength="254" placeholder="you@example.com" autocomplete="email">
+
+          <label for="template">Portfolio style</label>
+          <select id="template">
+            <option value="aurora">Evergreen — Contemporary</option>
+            <option value="folio">Paper — Editorial</option>
+            <option value="mono">Fieldnotes — High contrast</option>
+          </select>
+
+          <div class="portfolio-management">
+            <label for="portfolio-select">Saved portfolios</label>
+            <div class="portfolio-actions">
+              <select id="portfolio-select" aria-label="Select a saved portfolio">
+                <option value="">New portfolio</option>
+              </select>
+              <button class="secondary-btn" type="button" id="new-portfolio-btn">New</button>
+              <button class="secondary-btn" type="button" id="delete-portfolio-btn" disabled>Delete</button>
+            </div>
+
+            <label for="portfolio-slug">Public link</label>
+            <input id="portfolio-slug" maxlength="80" pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="your-name" autocomplete="off">
+            <p class="field-help">Choose a short link using lowercase letters, numbers, and hyphens.</p>
+            <label class="publish-option" for="portfolio-published">
+              <input id="portfolio-published" type="checkbox">
+              <span>Make this portfolio public to anyone with its link</span>
+            </label>
+            <a id="portfolio-share-link" class="share-link" href="#" target="_blank" rel="noopener" hidden>Open published portfolio ↗</a>
+          </div>
+
+          <button class="primary-btn full" type="submit">Update preview</button>
+          <button class="secondary-btn full" type="button" id="downloadBtn">Download portfolio website ↓</button>
+          <p class="small-note">Your draft stays on this page until you download it or save it to your account.</p>
+        </form>
+
+        <section class="preview-area" aria-label="Live portfolio preview">
+          <div class="preview-label">
+            <span>PREVIEW</span>
+            <span class="live-dot">LIVE</span>
+          </div>
+
+          <article id="preview" class="portfolio aurora">
+            <div class="preview-top">
+              <span class="mini-logo">PORTFOLIO</span>
+              <span class="available">Open to opportunities</span>
+            </div>
+
+            <div class="avatar" id="avatar" aria-hidden="true">Y</div>
+            <p class="preview-eyebrow">A LITTLE ABOUT ME</p>
+            <h2 id="previewName">Your Name</h2>
+            <h3 id="previewRole">Your Programme or Role</h3>
+            <p id="previewBio">Your introduction goes here. Share what you care about and the work you want to do.</p>
+
+            <div class="skill-list" id="previewSkills"></div>
+            <div class="preview-projects" id="previewProjects"></div>
+
+            <a id="previewEmail" href="#" class="contact-btn">Get in touch ↗</a>
+            <p class="preview-footer">MADE WITH PORTIFY</p>
+          </article>
+          <p id="public-portfolio-message" role="status" aria-live="polite" hidden></p>
+        </section>
+      </div>
+
+      <div class="save-row">
+        <button class="primary-btn" type="button" id="save-portfolio-btn">Save to my account</button>
+        <p id="save-portfolio-message" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="features" id="how-it-works" aria-label="How Portify works">
+      <article>
+        <span>ADD</span>
+        <h3>Start with what you have</h3>
+        <p>Introduce yourself, list your skills, and add school or personal projects. Every step is optional except the basics.</p>
+      </article>
+      <article>
+        <span>REFINE</span>
+        <h3>Make it feel like you</h3>
+        <p>See your changes instantly, choose a style, and keep editing until your work reads clearly.</p>
+      </article>
+      <article>
+        <span>SHARE</span>
+        <h3>Take it with you</h3>
+        <p>Download a standalone website or save and publish your portfolio from your account.</p>
+      </article>
+    </section>
+
+    <section class="account-section" id="account-section">
+      <div class="account-card">
+        <p class="account-eyebrow">YOUR ACCOUNT</p>
+        <h2>Keep your portfolio close.</h2>
+        <p id="account-description">Create an account or log in to save your portfolio and return to it later.</p>
+
+        <form id="auth-form">
+          <label for="auth-email">Email address</label>
+          <input id="auth-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+          <label id="auth-password-label" for="auth-password">Password</label>
+          <input id="auth-password" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
+
+          <div class="auth-actions">
+            <button class="primary-btn" type="submit" id="signup-btn">Create account</button>
+            <button class="secondary-btn" type="button" id="login-btn">Log in</button>
+            <button class="secondary-btn" type="button" id="logout-btn" hidden>Log out</button>
+          </div>
+          <p id="auth-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#top" aria-label="Portify home">
+      <span class="logo-mark" aria-hidden="true">P</span>
+      Portify
+    </a>
+    <p>© 2026 Portify</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
